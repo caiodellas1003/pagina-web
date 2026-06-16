@@ -1,0 +1,104 @@
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121214;
+    color: #e1e1e6;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #202024;
+    padding: 30px 0;
+    border-bottom: 2px solid #04d361;
+    text-align: center;
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #a8a8b3;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Menu de Navegação */
+nav a {
+    color: #a8a8b3;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: #04d361;
+}
+
+/* Postagens */
+.post {
+    background-color: #202024;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.post h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.post .meta {
+    font-size: 0.85rem;
+    color: #04d361;
+    margin-bottom: 15px;
+}
+
+.post p {
+    color: #c4c4cc;
+    margin-bottom: 20px;
+}
+
+/* Botões */
+.btn-read-more {
+    background-color: #04d361;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-read-more:hover {
+    background-color: #00b34d;
+    transform: translateY(-2px);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #7c7c8a;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}

@@ -3,44 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conexão Escolar - O Blog da Nossa Escola</title>
+    <title>Conexão Escolar | Portal de Notícias</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+    <a href="#main-content" class="sr-only">Pular para o conteúdo principal</a>
+
+    <header class="main-header">
         <div class="header-container">
-            <h1>🏫 Conexão Escolar</h1>
-            <p>Onde a voz dos alunos e o futuro se encontram!</p>
-            <nav>
-                <a href="#" class="active">Home</a>
-                <a href="#">Voz do Aluno</a>
-                <a href="#">Eventos</a>
-                <a href="#">Dicas de Estudo</a>
+            <div class="brand">
+                <span class="logo-icon">🏫</span>
+                <div class="brand-text">
+                    <h1>Conexão Escolar</h1>
+                    <p>O portal oficial de notícias e projetos da nossa comunidade</p>
+                </div>
+            </div>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#" class="nav-link active">Início</a></li>
+                    <li><a href="#" class="nav-link">Voz do Aluno</a></li>
+                    <li><a href="#" class="nav-link">Projetos</a></li>
+                    <li><a href="#" class="nav-link">Acadêmico</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        
-        <article class="post">
-            <h2>Superação e Talento: Como foi a nossa Feira de Ciências 2026!</h2>
-            <p class="meta">Por: Redação Conexão | 📅 16 de Junho de 2026</p>
-            <p>O pátio da nossa escola se transformou em um verdadeiro centro de inovação na última semana! Alunos do ensino fundamental e médio apresentaram projetos incríveis que uniram tecnologia, sustentabilidade e muita criatividade...</p>
-            <button class="btn-read-more">Ler Mais</button>
-        </article>
+    <main id="main-content" class="main-container">
+        <section class="feed-section">
+            <h2 class="section-title">Últimas Publicações</h2>
+            
+            <article class="post-card">
+                <div class="post-content">
+                    <span class="badge category-events">Eventos e Ciência</span>
+                    <h3 class="post-title">Superação e Talento: Como foi a nossa Feira de Ciências 2026</h3>
+                    <div class="post-meta">
+                        <span class="author">Por: Redação Conexão</span>
+                        <span class="divider">•</span>
+                        <time datetime="2026-06-16">16 de Junho de 2026</time>
+                    </div>
+                    <p class="post-excerpt">O pátio da instituição transformou-se em um polo de inovação tecnológica e científica. Alunos do Ensino Fundamental e Médio apresentaram projetos que integraram sustentabilidade, robótica e soluções para o futuro da comunidade.</p>
+                    <button class="btn-primary" data-post-id="1">Continuar lendo</button>
+                </div>
+            </article>
 
-        <article class="post">
-            <h2>Provas chegando? 3 Técnicas de Estudo que vão salvar sua nota</h2>
-            <p class="meta">Por: Prof. Carlos (Geografia) | 📅 15 de Junho de 2026</p>
-            <p>Sabemos que a rotina escolar pode ser intensa, mas estudar não precisa ser um sofrimento. Separamos três métodos validados pela ciência para você mandar bem nas próximas avaliações e organizar seu tempo...</p>
-            <button class="btn-read-more">Ler Mais</button>
-        </article>
-
+            <article class="post-card">
+                <div class="post-content">
+                    <span class="badge category-studies">Dicas de Estudo</span>
+                    <h3 class="post-title">Otimização de Rotina: 3 Técnicas de Aprendizado Validadas pela Ciência</h3>
+                    <div class="post-meta">
+                        <span class="author">Por: Prof. Carlos (Geografia)</span>
+                        <span class="divider">•</span>
+                        <time datetime="2026-06-15">15 de Junho de 2026</time>
+                    </div>
+                    <p class="post-excerpt">Com a proximidade das avaliações bimestrais, organizar o cronograma de estudos de forma eficiente é fundamental. Conheça métodos práticos como Pomodoro e Mapas Mentais para potencializar a retenção de conteúdo.</p>
+                    <button class="btn-primary" data-post-id="2">Continuar lendo</button>
+                </div>
+            </article>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Blog Conexão Escolar. Desenvolvido com HTML, CSS e JavaScript.</p>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Conexão Escolar. Todos os direitos reservados.</p>
+            <p class="footer-credits">Desenvolvido com foco em semântica e performance.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>

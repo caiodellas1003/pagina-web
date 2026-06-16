@@ -1,104 +1,228 @@
-/* Configurações Gerais */
+/* Variáveis de Cores e Estilo (Design Tokens) */
+:root {
+    --primary-color: #0284c7;     /* Azul Institucional */
+    --primary-hover: #0369a1;
+    --bg-main: #f8fafc;           /* Fundo claro moderno */
+    --bg-card: #ffffff;
+    --text-main: #1e293b;         /* Grafite escuro para melhor leitura */
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --radius-md: 8px;
+    --transition-fast: 0.2s ease;
+}
+
+/* Reset Global */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #121214;
-    color: #e1e1e6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-.container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
+/* Acessibilidade (Screen Readers Only) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
-/* Cabeçalho */
-header {
-    background-color: #202024;
-    padding: 30px 0;
-    border-bottom: 2px solid #04d361;
-    text-align: center;
+/* Layout Container */
+.header-container, .main-container, .footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
-header h1 {
-    color: #ffffff;
-    font-size: 2.5rem;
-    margin-bottom: 5px;
+/* Header & Navegação */
+.main-header {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-header p {
-    color: #a8a8b3;
-    font-size: 1rem;
-    margin-bottom: 20px;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
 }
 
-/* Menu de Navegação */
-nav a {
-    color: #a8a8b3;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    transition: color 0.3s;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-nav a:hover, nav a.active {
-    color: #04d361;
+.logo-icon {
+    font-size: 2rem;
 }
 
-/* Postagens */
-.post {
-    background-color: #202024;
-    padding: 25px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+.brand-text h1 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0f172a;
 }
 
-.post h2 {
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.post .meta {
+.brand-text p {
     font-size: 0.85rem;
-    color: #04d361;
-    margin-bottom: 15px;
+    color: var(--text-muted);
 }
 
-.post p {
-    color: #c4c4cc;
-    margin-bottom: 20px;
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
 }
 
-/* Botões */
-.btn-read-more {
-    background-color: #04d361;
-    color: #000000;
+.nav-link {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 6px 0;
+    transition: color var(--transition-fast);
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link.active {
+    border-color: var(--primary-color);
+}
+
+/* Área de Conteúdo */
+.main-container {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: #0f172a;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+/* Cards das Postagens */
+.post-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.post-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Badges e Categorias */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+}
+
+.category-events { background-color: #e0f2fe; color: #0369a1; }
+.category-studies { background-color: #f0fdf4; color: #166534; }
+
+.post-title {
+    font-size: 1.5rem;
+    color: #0f172a;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.post-excerpt {
+    color: #334155;
+    margin-bottom: 24px;
+    font-size: 1rem;
+}
+
+/* Botões Profissionais */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
     border: none;
     padding: 10px 20px;
     font-size: 0.9rem;
-    font-weight: bold;
-    border-radius: 4px;
+    font-weight: 600;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color var(--transition-fast);
 }
 
-.btn-read-more:hover {
-    background-color: #00b34d;
-    transform: translateY(-2px);
+.btn-primary:hover {
+    background-color: var(--primary-hover);
 }
 
-/* Rodapé */
-footer {
+/* Footer */
+.main-footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    padding: 32px 0;
     text-align: center;
-    padding: 20px 0;
-    color: #7c7c8a;
-    font-size: 0.9rem;
-    margin-top: 40px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.footer-credits {
+    margin-top: 4px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* Responsividade Básica (Dispositivos Móveis) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    
+    .brand {
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .main-nav ul {
+        gap: 16px;
+    }
+    
+    .post-card {
+        padding: 20px;
+    }
 }

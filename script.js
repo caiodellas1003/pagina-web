@@ -1,14 +1,36 @@
-// Aguarda o documento carregar completamente
-document.addEventListener("DOMContentLoaded", function() {
+/**
+ * Módulo de Gerenciamento do Blog Escolar
+ * Armazena interações de forma escalável.
+ */
+document.addEventListener("DOMContentLoaded", () => {
     
-    // Seleciona todos os botões de "Ler Mais"
-    const botoes = document.querySelectorAll(".btn-read-more");
+    const blogController = (() => {
+        
+        // Elementos do DOM
+        const readMoreButtons = document.querySelectorAll(".btn-primary");
 
-    // Adiciona um evento de clique para cada botão
-    botoes.forEach(function(botao) {
-        botao.addEventListener("click", function() {
-            alert("Em breve você poderá ler o artigo completo aqui! Essa funcionalidade está sendo desenvolvida.");
-        });
-    });
+        // Manipulador para clique em artigos
+        const handleReadMoreClick = (event) => {
+            const button = event.currentTarget;
+            const postId = button.getAttribute("data-post-id");
+            
+            // Simulação de navegação / requisição assíncrona futura
+            console.log(`Carregando artigo ID: ${postId}`);
+            alert("A visualização completa deste artigo está em fase de homologação e estará disponível em breve.");
+        };
 
-}); 
+        // Inicializa os ouvintes de eventos
+        const init = () => {
+            if (readMoreButtons.length > 0) {
+                readMoreButtons.forEach(button => {
+                    button.addEventListener("click", handleReadMoreClick);
+                });
+            }
+        };
+
+        return { init };
+    })();
+
+    // Executa a inicialização do controlador
+    blogController.init();
+});
